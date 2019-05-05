@@ -51,9 +51,13 @@ public class TestClass {
         regPage = new RegistrationPage(driver);
         inboxPage = new InboxPage(driver);
         regPage.registerUser();
-        if (inboxPage.checkInboxes())
+        if (inboxPage.checkInboxes()) {
 
-        inboxPage.checkInboxes();
+            inboxPage.countMails();
+
+        }
+
+
 
     }
 
