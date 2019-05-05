@@ -7,8 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.InboxPage;
 import pages.RegistrationPage;
+import pages.SendPage;
+import pages.SendingPage;
 import org.openqa.selenium.By;
-
 
 
 import java.util.concurrent.TimeUnit;
@@ -40,6 +41,8 @@ public class TestClass {
 
     RegistrationPage regPage;
     InboxPage inboxPage;
+    SendPage sendPage;
+    SendingPage sendingPage;
 
 
     @Test
@@ -51,12 +54,8 @@ public class TestClass {
         regPage = new RegistrationPage(driver);
         inboxPage = new InboxPage(driver);
         regPage.registerUser();
-        if (inboxPage.checkInboxes()) {
-
-            inboxPage.countMails();
-
-        }
-
+        inboxPage.countMails();
+        sendingPage.sendMail();
 
 
     }

@@ -32,10 +32,12 @@ public class InboxPage {
         driver.findElement(searchField).sendKeys("alex7851@yandex.ru");
 
         driver.findElement(enterIco).click();
-        Thread.sleep(1000);
-        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+
+
+        driver.navigate().refresh();
         int cntMails= driver.findElements(countMails).size();
         System.out.println("Количество писем " + cntMails);
+        driver.findElement(inboxIndicator).click();
     }
     public boolean checkInboxes(){
 
